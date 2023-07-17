@@ -4,10 +4,10 @@ function randNum(max) {
 }
 
 
-const affirmativeAnswers = ['It is certain.', 'It is decidedly so', 'Without a doubt', 'Yes definitely', 'You may rely on it', 
-                            'As I see it, yes', 'Most likely', 'Outlook good', 'Yes', 'Signs point to yes'];
-const nonCommitalAnswers = ['Reply hazy, try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again'];
-const negativeAnswers = ['Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good', 'Very doubtful'];
+const affirmativeAnswers = ['It is<br>certain.', 'It is<br>decidedly<br>so', 'Without<br>a doubt', 'Yes<br>definitely<br>', 'You may rely<br>on it', 
+                            'As I see<br>it, yes', 'Most<br>likely', 'Outlook<br>good', 'Yes', 'Signs<br>point to<br>yes'];
+const nonCommitalAnswers = ['Reply hazy,<br>try again', 'Ask again<br>later', 'Better not tell<br>you now<br><br>', 'Cannot<br>predict<br>now', 'Concentrate<br>and ask<br>again'];
+const negativeAnswers = ['Don\'t count<br>on it', 'My reply<br>is no', 'My sources<br>say no', 'Outlook<br>not so<br>good', 'Very<br>doubtful'];
 
 const answers = [affirmativeAnswers, nonCommitalAnswers, negativeAnswers];
 
@@ -17,10 +17,8 @@ window.onload = () => {
         // use the randNum function to choose a random reply w/ 33% chance for each answer type and equal chance for each reply of the selected answer type
         const answerType = randNum(3);
         const reply = answers[answerType][randNum(answerType === 0 ? 10 : 5)];
-        //console.log(reply);
 
         // update the html button with the reply
-        document.getElementById("8ball").innerHTML = reply;
-        console.log(reply);
+        document.getElementById("reply").innerHTML = reply;
     };
 };
